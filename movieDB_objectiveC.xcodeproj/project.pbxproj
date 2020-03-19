@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8144142A24242646009CEED6 /* DetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8144142924242646009CEED6 /* DetailsViewController.m */; };
 		818F2D812424248D00F79747 /* Movie.m in Sources */ = {isa = PBXBuildFile; fileRef = 818F2D802424248D00F79747 /* Movie.m */; };
 		81B8C183242137BA00BC7DC1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 81B8C182242137BA00BC7DC1 /* AppDelegate.m */; };
 		81B8C186242137BA00BC7DC1 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 81B8C185242137BA00BC7DC1 /* SceneDelegate.m */; };
@@ -18,6 +19,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8144142824242646009CEED6 /* DetailsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailsViewController.h; sourceTree = "<group>"; };
+		8144142924242646009CEED6 /* DetailsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailsViewController.m; sourceTree = "<group>"; };
 		818F2D7F2424248D00F79747 /* Movie.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Movie.h; sourceTree = "<group>"; };
 		818F2D802424248D00F79747 /* Movie.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Movie.m; sourceTree = "<group>"; };
 		81B8C17E242137BA00BC7DC1 /* movieDB_objectiveC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = movieDB_objectiveC.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -45,6 +48,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8144142624242619009CEED6 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				81B8C187242137BA00BC7DC1 /* ViewController.h */,
+				81B8C188242137BA00BC7DC1 /* ViewController.m */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		8144142724242628009CEED6 /* Details */ = {
+			isa = PBXGroup;
+			children = (
+				8144142824242646009CEED6 /* DetailsViewController.h */,
+				8144142924242646009CEED6 /* DetailsViewController.m */,
+			);
+			path = Details;
+			sourceTree = "<group>";
+		};
 		818F2D7824241EBF00F79747 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -56,8 +77,8 @@
 		818F2D7924241EC700F79747 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				81B8C187242137BA00BC7DC1 /* ViewController.h */,
-				81B8C188242137BA00BC7DC1 /* ViewController.m */,
+				8144142624242619009CEED6 /* Home */,
+				8144142724242628009CEED6 /* Details */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -194,6 +215,7 @@
 				81B8C189242137BA00BC7DC1 /* ViewController.m in Sources */,
 				81B8C183242137BA00BC7DC1 /* AppDelegate.m in Sources */,
 				818F2D812424248D00F79747 /* Movie.m in Sources */,
+				8144142A24242646009CEED6 /* DetailsViewController.m in Sources */,
 				81B8C194242137BD00BC7DC1 /* main.m in Sources */,
 				81B8C186242137BA00BC7DC1 /* SceneDelegate.m in Sources */,
 			);
