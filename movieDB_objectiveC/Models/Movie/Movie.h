@@ -11,4 +11,11 @@
 
 @interface Movie : NSObject
 
+@property NSString *movieTitle;
+@property NSNumber *rating;
+@property NSString *genres;
+@property NSString *overview;
+@property NSString *imageUrl;
+@property NSNumber *movieId;
+
 @end
