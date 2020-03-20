@@ -103,4 +103,16 @@
     }
 }
 
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return 2;
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    if (section == 0) {
+        return @"Popular Movies";
+    } else {
+        return @"Now Playing";
+    }
+}
+
 @end
