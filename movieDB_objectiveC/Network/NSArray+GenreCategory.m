@@ -8,6 +8,29 @@
 
 #import "NSArray+GenreCategory.h"
 
-@implementation NSArray_GenreCategory
+@implementation NSArray (GenreCategory)
+
+- (NSString *) getGenreFullString {
+    
+    NSString *genreString = NSString.new;
+    NSString *symbol = NSString.new;
+    
+    
+    for (NSDictionary *genreObject in self) {
+        NSString *genre = [genreObject objectForKey: @"name"];
+        
+        
+        if (genreObject != self.lastObject) {
+            symbol = @", ";
+        } else {
+            symbol = @".";
+        }
+        
+        genre = [genre stringByAppendingString: symbol];
+        genreString = [genreString stringByAppendingString: genre];
+    }
+    
+    return genreString;
+}
 
 @end

@@ -7,6 +7,8 @@
 //
 
 #import "Network.h"
+#import <Foundation/Foundation.h>
+#import "Movie.h"
 
 @implementation Network
 

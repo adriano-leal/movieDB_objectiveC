@@ -7,11 +7,19 @@
 //
 
 #import <Foundation/Foundation.h>
-
-NS_ASSUME_NONNULL_BEGIN
+#import "Movie.h"
 
 @interface Network : NSObject
 
-@end
+typedef enum categories {
+    POPULAR,
+    NOW_PLAYING
+}movieCategory;
 
-NS_ASSUME_NONNULL_END
+- (void) getMovies:(movieCategory)movieCategory completion: (void (^)(NSMutableArray*))callback;
+
+- (void) getMovieBanner:(NSString* )imageUrl completion:(void (^)(NSData *))callback;
+
+- (void) getMovieDetails:(int)movieId completion:(void (^)(Movie*))callback;
+
+@end

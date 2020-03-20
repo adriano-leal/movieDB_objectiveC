@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		8144142A24242646009CEED6 /* DetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8144142924242646009CEED6 /* DetailsViewController.m */; };
+		8144142F24245481009CEED6 /* Network.m in Sources */ = {isa = PBXBuildFile; fileRef = 8144142E24245481009CEED6 /* Network.m */; };
+		81441432242456B3009CEED6 /* NSArray+GenreCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 81441431242456B3009CEED6 /* NSArray+GenreCategory.m */; };
+		8144143624245D06009CEED6 /* TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8144143524245D06009CEED6 /* TableViewCell.m */; };
 		818F2D812424248D00F79747 /* Movie.m in Sources */ = {isa = PBXBuildFile; fileRef = 818F2D802424248D00F79747 /* Movie.m */; };
 		81B8C183242137BA00BC7DC1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 81B8C182242137BA00BC7DC1 /* AppDelegate.m */; };
 		81B8C186242137BA00BC7DC1 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 81B8C185242137BA00BC7DC1 /* SceneDelegate.m */; };
@@ -21,6 +24,12 @@
 /* Begin PBXFileReference section */
 		8144142824242646009CEED6 /* DetailsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailsViewController.h; sourceTree = "<group>"; };
 		8144142924242646009CEED6 /* DetailsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailsViewController.m; sourceTree = "<group>"; };
+		8144142D24245481009CEED6 /* Network.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Network.h; sourceTree = "<group>"; };
+		8144142E24245481009CEED6 /* Network.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Network.m; sourceTree = "<group>"; };
+		81441430242456B3009CEED6 /* NSArray+GenreCategory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSArray+GenreCategory.h"; sourceTree = "<group>"; };
+		81441431242456B3009CEED6 /* NSArray+GenreCategory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSArray+GenreCategory.m"; sourceTree = "<group>"; };
+		8144143424245D06009CEED6 /* TableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TableViewCell.h; sourceTree = "<group>"; };
+		8144143524245D06009CEED6 /* TableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TableViewCell.m; sourceTree = "<group>"; };
 		818F2D7F2424248D00F79747 /* Movie.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Movie.h; sourceTree = "<group>"; };
 		818F2D802424248D00F79747 /* Movie.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Movie.m; sourceTree = "<group>"; };
 		81B8C17E242137BA00BC7DC1 /* movieDB_objectiveC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = movieDB_objectiveC.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -51,6 +60,7 @@
 		8144142624242619009CEED6 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				8144143324245CEC009CEED6 /* TableView */,
 				81B8C187242137BA00BC7DC1 /* ViewController.h */,
 				81B8C188242137BA00BC7DC1 /* ViewController.m */,
 			);
@@ -64,6 +74,26 @@
 				8144142924242646009CEED6 /* DetailsViewController.m */,
 			);
 			path = Details;
+			sourceTree = "<group>";
+		};
+		8144142C24245436009CEED6 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				8144142D24245481009CEED6 /* Network.h */,
+				8144142E24245481009CEED6 /* Network.m */,
+				81441430242456B3009CEED6 /* NSArray+GenreCategory.h */,
+				81441431242456B3009CEED6 /* NSArray+GenreCategory.m */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		8144143324245CEC009CEED6 /* TableView */ = {
+			isa = PBXGroup;
+			children = (
+				8144143424245D06009CEED6 /* TableViewCell.h */,
+				8144143524245D06009CEED6 /* TableViewCell.m */,
+			);
+			path = TableView;
 			sourceTree = "<group>";
 		};
 		818F2D7824241EBF00F79747 /* Views */ = {
@@ -89,6 +119,7 @@
 				81B8C181242137BA00BC7DC1 /* AppDelegate.h */,
 				81B8C182242137BA00BC7DC1 /* AppDelegate.m */,
 				81B8C184242137BA00BC7DC1 /* SceneDelegate.h */,
+				81B8C193242137BD00BC7DC1 /* main.m */,
 				81B8C185242137BA00BC7DC1 /* SceneDelegate.m */,
 			);
 			path = Support;
@@ -130,14 +161,14 @@
 		81B8C180242137BA00BC7DC1 /* movieDB_objectiveC */ = {
 			isa = PBXGroup;
 			children = (
+				8144142C24245436009CEED6 /* Network */,
 				818F2D7E2424246400F79747 /* Models */,
 				818F2D7924241EC700F79747 /* Controllers */,
 				818F2D7824241EBF00F79747 /* Views */,
 				818F2D7D242423C400F79747 /* Support */,
 				81B8C18D242137BD00BC7DC1 /* Assets.xcassets */,
-				81B8C18F242137BD00BC7DC1 /* LaunchScreen.storyboard */,
 				81B8C192242137BD00BC7DC1 /* Info.plist */,
-				81B8C193242137BD00BC7DC1 /* main.m */,
+				81B8C18F242137BD00BC7DC1 /* LaunchScreen.storyboard */,
 			);
 			path = movieDB_objectiveC;
 			sourceTree = "<group>";
@@ -216,7 +247,10 @@
 				81B8C183242137BA00BC7DC1 /* AppDelegate.m in Sources */,
 				818F2D812424248D00F79747 /* Movie.m in Sources */,
 				8144142A24242646009CEED6 /* DetailsViewController.m in Sources */,
+				8144143624245D06009CEED6 /* TableViewCell.m in Sources */,
+				81441432242456B3009CEED6 /* NSArray+GenreCategory.m in Sources */,
 				81B8C194242137BD00BC7DC1 /* main.m in Sources */,
+				8144142F24245481009CEED6 /* Network.m in Sources */,
 				81B8C186242137BA00BC7DC1 /* SceneDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
