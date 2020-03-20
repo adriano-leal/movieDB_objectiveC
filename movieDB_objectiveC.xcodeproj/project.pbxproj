@@ -60,7 +60,6 @@
 		8144142624242619009CEED6 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				8144143324245CEC009CEED6 /* TableView */,
 				81B8C187242137BA00BC7DC1 /* ViewController.h */,
 				81B8C188242137BA00BC7DC1 /* ViewController.m */,
 			);
@@ -96,9 +95,18 @@
 			path = TableView;
 			sourceTree = "<group>";
 		};
+		8144143724253719009CEED6 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				8144143324245CEC009CEED6 /* TableView */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
 		818F2D7824241EBF00F79747 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				8144143724253719009CEED6 /* Home */,
 				81B8C18A242137BA00BC7DC1 /* Main.storyboard */,
 			);
 			path = Views;

@@ -12,8 +12,8 @@
 @interface Network : NSObject
 
 typedef enum categories {
-    POPULAR,
-    NOW_PLAYING
+    Popular,
+    NowPlaying
 }movieCategory;
 
 - (void) getMovies:(movieCategory)movieCategory completion: (void (^)(NSMutableArray*))callback;

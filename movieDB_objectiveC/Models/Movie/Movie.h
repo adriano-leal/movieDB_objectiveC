@@ -11,6 +11,7 @@
 
 @interface Movie : NSObject
 
+@property UIImage *movieBanner;
 @property NSString *movieTitle;
 @property NSNumber *rating;
 @property NSString *genres;

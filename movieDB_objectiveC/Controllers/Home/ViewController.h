@@ -7,8 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Movie.h"
+#import "Network.h"
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
+
+@property (weak, nonatomic) IBOutlet UITableView *moviesTableView;
+@property NSArray<Movie *> *popular;
+@property NSArray<Movie *> *nowPlaying;
+@property Network *networking;
 
 @end
-
