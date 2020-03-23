@@ -7,6 +7,7 @@
 //
 
 #import "DetailsViewController.h"
+#import "Movie.h"
 
 @interface DetailsViewController ()
 
@@ -16,6 +17,17 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    _movieBannerImage.layer.cornerRadius = 10;
+    _movieBannerImage.image = _movie.movieBanner;
+    _titleLabel.text = _movie.movieTitle;
+    _genresLabel.text = _movie.genres;
+    _ratingLabel.text = [_movie.rating stringValue];
+    _overviewTV.text = _movie.overview;
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    self.navigationController.navigationBar.prefersLargeTitles = NO;
 }
 
 @end
