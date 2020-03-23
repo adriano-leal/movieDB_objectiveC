@@ -17,4 +17,7 @@
 @property NSArray<Movie *> *nowPlaying;
 @property Network *networking;
 
+- (void) setupCustomNavBar;
+- (void) getBanner: (NSString *)imageUrl completion:(void (^)(UIImage*))callback;
+
 @end
