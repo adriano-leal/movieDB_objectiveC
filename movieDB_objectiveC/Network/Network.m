@@ -84,7 +84,7 @@ static NSString *const bannerURL = @"https://image.tmdb.org/t/p/w500";
     }]resume];
 }
 
-- (void) getMovieDetails:(NSNumber*)movieId completion:(void (^)(Movie *))callback {
+- (void) getMovieDetails:(NSNumber* )movieId completion:(void (^)(Movie*))callback {
     
     NSString *movieDetailsUrl = @"https://api.themoviedb.org/3/movie/";
     

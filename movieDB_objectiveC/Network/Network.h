@@ -20,6 +20,6 @@ typedef enum categories {
 
 - (void) getMovieBanner:(NSString* )imageUrl completion:(void (^)(NSData *))callback;
 
-- (void) getMovieDetails:(int)movieId completion:(void (^)(Movie*))callback;
+- (void) getMovieDetails:(NSNumber* )movieId completion:(void (^)(Movie*))callback;
 
 @end

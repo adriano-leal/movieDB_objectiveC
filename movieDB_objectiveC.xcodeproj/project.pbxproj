@@ -32,7 +32,7 @@
 		8144143524245D06009CEED6 /* TableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TableViewCell.m; sourceTree = "<group>"; };
 		818F2D7F2424248D00F79747 /* Movie.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Movie.h; sourceTree = "<group>"; };
 		818F2D802424248D00F79747 /* Movie.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Movie.m; sourceTree = "<group>"; };
-		81B8C17E242137BA00BC7DC1 /* movieDB_objectiveC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = movieDB_objectiveC.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		81B8C17E242137BA00BC7DC1 /* MovieDB Adriano.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MovieDB Adriano.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		81B8C181242137BA00BC7DC1 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		81B8C182242137BA00BC7DC1 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		81B8C184242137BA00BC7DC1 /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
@@ -161,7 +161,7 @@
 		81B8C17F242137BA00BC7DC1 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				81B8C17E242137BA00BC7DC1 /* movieDB_objectiveC.app */,
+				81B8C17E242137BA00BC7DC1 /* MovieDB Adriano.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -198,7 +198,7 @@
 			);
 			name = movieDB_objectiveC;
 			productName = movieDB_objectiveC;
-			productReference = 81B8C17E242137BA00BC7DC1 /* movieDB_objectiveC.app */;
+			productReference = 81B8C17E242137BA00BC7DC1 /* MovieDB Adriano.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -407,7 +407,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.developer.adriano.FaceRecognition.movieDB-objectiveC";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "MovieDB Adriano";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -424,7 +424,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.developer.adriano.FaceRecognition.movieDB-objectiveC";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "MovieDB Adriano";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
