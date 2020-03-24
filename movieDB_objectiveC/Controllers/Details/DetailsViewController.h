@@ -19,5 +19,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *ratingLabel;
 @property (weak, nonatomic) IBOutlet UITextView *overviewTV;
 
+- (void) hideLargeTitle;
+
 @end
 

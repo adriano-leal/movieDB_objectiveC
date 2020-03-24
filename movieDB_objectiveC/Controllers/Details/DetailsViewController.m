@@ -27,6 +27,10 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated {
+    [self hideLargeTitle];
+}
+
+- (void) hideLargeTitle {
     self.navigationController.navigationBar.prefersLargeTitles = NO;
 }
 

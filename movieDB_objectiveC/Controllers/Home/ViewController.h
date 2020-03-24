@@ -18,6 +18,9 @@
 @property Network *networking;
 
 - (void) setupCustomNavBar;
+- (void) configNetwork;
+- (void) configTableView;
+- (void) setupSearchBar;
 - (void) getBanner: (NSString *)imageUrl completion:(void (^)(UIImage*))callback;
 
 @end

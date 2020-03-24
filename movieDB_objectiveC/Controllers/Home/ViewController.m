@@ -12,9 +12,6 @@
 #import "Network.h"
 #import "TableViewCell.h"
 #import "DetailsViewController.h"
-#import <QuartzCore/QuartzCore.h>
-
-
 
 @interface ViewController ()
 
@@ -25,45 +22,64 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    _networking = [[Network alloc] init];
-    _moviesTableView.delegate = self;
-    _moviesTableView.dataSource = self;
-    
-    [_networking getMovies:Popular completion:^(NSMutableArray * movies) {
-        self->_popular = movies;
-        
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [self->_moviesTableView reloadData];
-        });
-    }];
-    
-    [_networking getMovies:NowPlaying completion:^(NSMutableArray * movies) {
-        
-        self->_nowPlaying = movies;
-        
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [self->_moviesTableView reloadData];
-        });
-        
-    }];
+    [self configTableView];
+    [self configNetwork];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [self setupCustomNavBar];
 }
 
+- (void) configTableView {
+    _moviesTableView.delegate = self;
+    _moviesTableView.dataSource = self;
+}
+
+// MARK: - Custom nav bar to hide back button title and color
 - (void) setupCustomNavBar {
     self.navigationItem.title = @"Movies";
     self.navigationController.navigationBar.prefersLargeTitles = YES;
     [self.navigationItem setBackBarButtonItem:[[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:nil action:nil]];
     self.navigationController.navigationBar.tintColor = [UIColor blackColor];
+    [self setupSearchBar];
 }
 
+- (void) setupSearchBar {
+    UISearchController *searchBarController = UISearchController.new;
+    searchBarController.obscuresBackgroundDuringPresentation = true;
+    self.navigationItem.searchController = searchBarController;
+    self.navigationItem.hidesSearchBarWhenScrolling = false;
+}
+
+// MARK: - Perform segue
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(Movie *)sender {
     if([[segue identifier] isEqualToString:@"goToDetails"]) {
         DetailsViewController *vc = [segue destinationViewController];
         vc.movie = sender;
     }
+}
+
+// MARK: - Requests and networking layer setup
+- (void) configNetwork {
+    _networking = [[Network alloc] init];
+    
+        [_networking getMovies:Popular completion:^(NSMutableArray * movies) {
+            self->_popular = movies;
+    
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self->_moviesTableView reloadData];
+            });
+        }];
+        
+        [_networking getMovies:NowPlaying completion:^(NSMutableArray * movies) {
+    
+            self->_nowPlaying = movies;
+    
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self->_moviesTableView reloadData];
+            });
+    
+        }];
 }
 
 - (void)getBanner:(NSString *)imageUrl completion:(void (^)(UIImage *))callback {
@@ -73,63 +89,38 @@
     }];
 }
 
-//- (NSArray *)bubbleSort:(NSMutableArray *)sortedArray {
-//   long count = sortedArray.count;
-//   bool swapped = YES;
-//   while (swapped)
-//   {
-//   swapped = NO;
+
+// MARK: - Merge sort algorithm to sort movie list
+//- (NSArray *)arrayMerge:(NSArray *)arrayLeft :(NSArray *)arrayRight {
+//    NSMutableArray *resultArray = [[NSMutableArray alloc] init];
 //
-//      for (int i = 1; i < count; i++)
-//      {
-//          int x = [sortedArray[i-1] intValue];
-//          int y = [sortedArray[i] intValue];
+//    int i = 0, j = 0;
 //
-//          if (x > y)
-//          {
-//               [sortedArray exchangeObjectAtIndex:(i-1) withObjectAtIndex:i];
-//               swapped = YES;
-//          }
-//      }
-//   }
-//   return sortedArray;
+//    while (i < arrayLeft.count && j < arrayRight.count)
+//        [resultArray addObject:([arrayLeft[i] intValue] < [arrayRight[j] intValue]) ? arrayLeft[i++] : arrayRight[j++]];
+//
+//    while (i < arrayLeft.count)
+//        [resultArray addObject:arrayLeft[i++]];
+//
+//    while (j < arrayRight.count)
+//        [resultArray addObject:arrayRight[j++]];
+//
+//    return resultArray;
+//}
+//- (NSArray *)arrayMergeSort:(NSArray *)targetArray {
+//    if (targetArray.count < 2)
+//        return targetArray;
+//
+//    long midIndex = targetArray.count/2;
+//
+//    NSArray *arrayLeft = [targetArray subarrayWithRange:NSMakeRange(0, midIndex)];
+//
+//    NSArray *arrayRight= [targetArray subarrayWithRange:NSMakeRange(midIndex, targetArray.count - midIndex)];
+//
+//    return [self arrayMerge: [self arrayMergeSort:arrayLeft] : [self arrayMergeSort:arrayRight]];
 //}
 
-- (NSArray *)arrayMerge:(NSArray *)arrayLeft :(NSArray *)arrayRight
-{
-    NSMutableArray *resultArray = [[NSMutableArray alloc] init];
-
-    int i = 0, j = 0;
-
-    while (i < arrayLeft.count && j < arrayRight.count)
-        [resultArray addObject:([arrayLeft[i] intValue] < [arrayRight[j] intValue]) ? arrayLeft[i++] : arrayRight[j++]];
-
-    while (i < arrayLeft.count)
-        [resultArray addObject:arrayLeft[i++]];
-
-    while (j < arrayRight.count)
-        [resultArray addObject:arrayRight[j++]];
-
-    return resultArray;
-}
-
-- (NSArray *)arrayMergeSort:(NSArray *)targetArray
-{
-    if (targetArray.count < 2)
-        return targetArray;
-
-    long midIndex = targetArray.count/2;
-
-    NSArray *arrayLeft = [targetArray subarrayWithRange:NSMakeRange(0, midIndex)];
-
-    NSArray *arrayRight= [targetArray subarrayWithRange:NSMakeRange(midIndex, targetArray.count - midIndex)];
-
-    return [self arrayMerge: [self arrayMergeSort:arrayLeft] : [self arrayMergeSort:arrayRight]];
-}
-
-
-
-
+// - MARK: - Table View delegate and data source methods
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
     
     static NSString *identifier = @"movieCell";
@@ -152,8 +143,8 @@
             }];
         }
     } else if (indexPath.section == 1) {
-        NSMutableArray * nowPlayingSorted = [[NSMutableArray alloc] initWithObjects:_nowPlaying, nil];
-        [self arrayMergeSort:nowPlayingSorted];
+//        NSMutableArray * nowPlayingSorted = [[NSMutableArray alloc] initWithObjects:_nowPlaying, nil];
+//        [self arrayMergeSort:nowPlayingSorted];
         
         cell.title.text = _nowPlaying[indexPath.row].movieTitle;
         cell.overview.text = _nowPlaying[indexPath.row].overview;

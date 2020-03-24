@@ -11,6 +11,8 @@
 
 @interface Movie : NSObject
 
+// Não usar UIKit em models
+// trocar movieBanner para String(?)
 @property UIImage *movieBanner;
 @property NSString *movieTitle;
 @property NSNumber *rating;
