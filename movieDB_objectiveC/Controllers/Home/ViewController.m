@@ -89,37 +89,6 @@
     }];
 }
 
-
-// MARK: - Merge sort algorithm to sort movie list
-//- (NSArray *)arrayMerge:(NSArray *)arrayLeft :(NSArray *)arrayRight {
-//    NSMutableArray *resultArray = [[NSMutableArray alloc] init];
-//
-//    int i = 0, j = 0;
-//
-//    while (i < arrayLeft.count && j < arrayRight.count)
-//        [resultArray addObject:([arrayLeft[i] intValue] < [arrayRight[j] intValue]) ? arrayLeft[i++] : arrayRight[j++]];
-//
-//    while (i < arrayLeft.count)
-//        [resultArray addObject:arrayLeft[i++]];
-//
-//    while (j < arrayRight.count)
-//        [resultArray addObject:arrayRight[j++]];
-//
-//    return resultArray;
-//}
-//- (NSArray *)arrayMergeSort:(NSArray *)targetArray {
-//    if (targetArray.count < 2)
-//        return targetArray;
-//
-//    long midIndex = targetArray.count/2;
-//
-//    NSArray *arrayLeft = [targetArray subarrayWithRange:NSMakeRange(0, midIndex)];
-//
-//    NSArray *arrayRight= [targetArray subarrayWithRange:NSMakeRange(midIndex, targetArray.count - midIndex)];
-//
-//    return [self arrayMerge: [self arrayMergeSort:arrayLeft] : [self arrayMergeSort:arrayRight]];
-//}
-
 // - MARK: - Table View delegate and data source methods
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
     
@@ -143,9 +112,6 @@
             }];
         }
     } else if (indexPath.section == 1) {
-//        NSMutableArray * nowPlayingSorted = [[NSMutableArray alloc] initWithObjects:_nowPlaying, nil];
-//        [self arrayMergeSort:nowPlayingSorted];
-        
         cell.title.text = _nowPlaying[indexPath.row].movieTitle;
         cell.overview.text = _nowPlaying[indexPath.row].overview;
         cell.image.layer.cornerRadius = 10;
@@ -210,9 +176,7 @@
                 [self performSegueWithIdentifier:@"goToDetails" sender:movie];
             });
         }];
-        
     }
-    
 }
 
 @end
