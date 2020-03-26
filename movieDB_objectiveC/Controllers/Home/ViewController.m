@@ -93,7 +93,6 @@
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
     
     static NSString *identifier = @"movieCell";
-    
     TableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
     //POPULAR
     if(indexPath.section == 0) {

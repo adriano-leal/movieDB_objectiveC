@@ -12,6 +12,7 @@
 @interface DetailsViewController : UIViewController
 
 @property Movie *movie;
+@property NSNumber *movieId;
 
 @property (weak, nonatomic) IBOutlet UIImageView *movieBannerImage;
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
@@ -20,6 +21,6 @@
 @property (weak, nonatomic) IBOutlet UITextView *overviewTV;
 
 - (void) hideLargeTitle;
-
+- (void) configNetwork;
 @end
 
