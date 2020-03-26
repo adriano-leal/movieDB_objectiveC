@@ -8,13 +8,9 @@
 
 #import <Foundation/Foundation.h>
 #import "Movie.h"
+#import "RequestType.h"
 
 @interface Network : NSObject
-
-typedef enum categories {
-    Popular,
-    NowPlaying
-}movieCategory;
 
 - (void) getMovies:(movieCategory)movieCategory completion: (void (^)(NSMutableArray*))callback;
 

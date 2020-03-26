@@ -8,10 +8,12 @@
 
 #import <Foundation/Foundation.h>
 
-NS_ASSUME_NONNULL_BEGIN
-
 @interface RequestType : NSObject
+
+typedef enum requestCategory {
+    Popular,
+    NowPlaying
+}movieCategory;
 
 @end
 
-NS_ASSUME_NONNULL_END
