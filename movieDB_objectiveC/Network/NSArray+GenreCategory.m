@@ -15,7 +15,6 @@
     NSString *genreString = NSString.new;
     NSString *symbol = NSString.new;
     
-    
     for (NSDictionary *genreObject in self) {
         NSString *genre = [genreObject objectForKey: @"name"];
         

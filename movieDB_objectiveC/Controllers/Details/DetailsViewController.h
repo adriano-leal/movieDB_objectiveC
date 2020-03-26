@@ -21,6 +21,6 @@
 @property (weak, nonatomic) IBOutlet UITextView *overviewTV;
 
 - (void) hideLargeTitle;
-- (void) configNetwork;
+
 @end
 
