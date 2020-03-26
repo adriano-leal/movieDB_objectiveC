@@ -19,7 +19,6 @@
     for (NSDictionary *genreObject in self) {
         NSString *genre = [genreObject objectForKey: @"name"];
         
-        
         if (genreObject != self.lastObject) {
             symbol = @", ";
         } else {
