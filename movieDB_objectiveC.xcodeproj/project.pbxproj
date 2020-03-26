@@ -19,6 +19,7 @@
 		81B8C18E242137BD00BC7DC1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 81B8C18D242137BD00BC7DC1 /* Assets.xcassets */; };
 		81B8C191242137BD00BC7DC1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81B8C18F242137BD00BC7DC1 /* LaunchScreen.storyboard */; };
 		81B8C194242137BD00BC7DC1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 81B8C193242137BD00BC7DC1 /* main.m */; };
+		81C63551242D70C000F6FEB9 /* RequestType.m in Sources */ = {isa = PBXBuildFile; fileRef = 81C63550242D70C000F6FEB9 /* RequestType.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,8 @@
 		81B8C190242137BD00BC7DC1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		81B8C192242137BD00BC7DC1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		81B8C193242137BD00BC7DC1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		81C6354F242D70C000F6FEB9 /* RequestType.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RequestType.h; sourceTree = "<group>"; };
+		81C63550242D70C000F6FEB9 /* RequestType.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RequestType.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +85,8 @@
 				8144142E24245481009CEED6 /* Network.m */,
 				81441430242456B3009CEED6 /* NSArray+GenreCategory.h */,
 				81441431242456B3009CEED6 /* NSArray+GenreCategory.m */,
+				81C6354F242D70C000F6FEB9 /* RequestType.h */,
+				81C63550242D70C000F6FEB9 /* RequestType.m */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -258,6 +263,7 @@
 				8144143624245D06009CEED6 /* TableViewCell.m in Sources */,
 				81441432242456B3009CEED6 /* NSArray+GenreCategory.m in Sources */,
 				81B8C194242137BD00BC7DC1 /* main.m in Sources */,
+				81C63551242D70C000F6FEB9 /* RequestType.m in Sources */,
 				8144142F24245481009CEED6 /* Network.m in Sources */,
 				81B8C186242137BA00BC7DC1 /* SceneDelegate.m in Sources */,
 			);

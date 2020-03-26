@@ -100,7 +100,7 @@
         cell.overview.text = _popular[indexPath.row].overview;
         cell.image.layer.cornerRadius = 10;
         NSString *ratingToLabel = [_popular[indexPath.row].rating stringValue];
-        cell.rating.text = ratingToLabel;
+        cell.rating.text = [NSString stringWithFormat:@"%.01f", ratingToLabel.doubleValue];
         
         
         if (_popular[indexPath.row].movieBanner == nil) {
@@ -115,7 +115,7 @@
         cell.overview.text = _nowPlaying[indexPath.row].overview;
         cell.image.layer.cornerRadius = 10;
         NSString *ratingToLabel = [_nowPlaying[indexPath.row].rating stringValue];
-        cell.rating.text = ratingToLabel;
+        cell.rating.text = [NSString stringWithFormat:@"%.01f", ratingToLabel.doubleValue];
         
         if (_nowPlaying[indexPath.row].movieBanner == nil) {
             [self getBanner:_nowPlaying[indexPath.row].imageUrl  completion:^(UIImage * image) {
