@@ -51,7 +51,6 @@ static NSString *const bannerURL = @"https://image.tmdb.org/t/p/w500";
             
             for (NSDictionary *movie in movieArray) {
                 Movie *movieItem = [[Movie alloc] init];
-                // Movie banner
                 NSString * bannerPath = [movie objectForKey: @"poster_path"];
                 
                 movieItem.movieId = [movie objectForKey: @"id"];
@@ -111,11 +110,9 @@ static NSString *const bannerURL = @"https://image.tmdb.org/t/p/w500";
             movieItem.overview = [movieJson objectForKey:@"overview"];
             movieItem.rating = [movieJson objectForKey:@"vote_average"];
             
-            // Genres
             NSArray *genresArray = [movieJson objectForKey:@"genres"];
             movieItem.genres = [genresArray getGenreFullString];
             
-            // Banner image
             NSString *bannerPath = [movieJson objectForKey:@"poster_path"];
             movieItem.imageUrl = [bannerURL stringByAppendingString: bannerPath];
             
@@ -124,7 +121,6 @@ static NSString *const bannerURL = @"https://image.tmdb.org/t/p/w500";
             NSLog(@"Json Parse error: %@", exception);
             return;
         }
-        
     }]resume];
 }
 
